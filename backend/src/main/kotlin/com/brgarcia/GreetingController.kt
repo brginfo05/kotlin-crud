@@ -11,11 +11,11 @@ import javax.validation.Valid
 class GreetingController @Autowired constructor(val greetingRepository: GreetingRepository) {
 
     @RequestMapping("/greeting", method = arrayOf(RequestMethod.GET))
-    fun greeting() =
-            greetingRepository.all()
+    fun greeting()
+            = greetingRepository.all()
 
 
     @RequestMapping(value = "/greeting", method = arrayOf(RequestMethod.POST))
-    fun greeting(@Valid @RequestBody greeting: Greeting) =
-            greetingRepository.include(greeting)
+    fun greeting(@Valid @RequestBody greeting: Greeting)
+            = greetingRepository.include(greeting)
 }
